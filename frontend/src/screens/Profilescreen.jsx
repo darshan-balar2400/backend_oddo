@@ -1,5 +1,5 @@
 const ProfileScreen = () => {
-    return <></>;
+  return <>Profile</>;
 };
 
 export default ProfileScreen;

@@ -1,8 +1,11 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const initialValues = { email: "", password: "" };
+  const navigate = useNavigate();
 
   const validationSchema = Yup.object({
     email: Yup.string().email("Invalid email address").required("Required"),
@@ -13,6 +16,22 @@ const Login = () => {
   const handleSubmit = (values, { setSubmitting }) => {
     console.log("Form submitted:", values);
     setSubmitting(false);
+
+    axios
+      .post("http://localhost:5000/user/login", values)
+      .then((response) => {
+        console.log("Form submitted successfully:", response.data);
+        // Optionally reset the form after submission
+        // resetForm();
+
+        navigate("/dashboard");
+      })
+      .catch((error) => {
+        console.error("Error submitting form:", error);
+      })
+      .finally(() => {
+        setSubmitting(false);
+      });
   };
   return (
     <Formik
@@ -91,10 +110,7 @@ const Login = () => {
           </button>
           <div className="text-sm font-medium text-gray-500">
             Not registered?{" "}
-            <a
-              href="#"
-              className="text-blue-700 hover:underline"
-            >
+            <a href="#" className="text-blue-700 hover:underline">
               Create account
             </a>
           </div>
