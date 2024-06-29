@@ -3,6 +3,7 @@ import Login from "./screens/Login";
 import HomeScreen from "./screens/Homescreen";
 import AuthWrapper from "./screens/Authwrapper";
 import ProfileScreen from "./screens/Profilescreen";
+import SignUp from "./screens/Signup";
 
 const RouterFile = () => {
   return (
