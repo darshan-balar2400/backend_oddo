@@ -9,7 +9,7 @@ export default {
 
       'lg': { 'min': '1024px', 'max': '1279px' },
 
-      'xl': { 'min': '1280px', 'max': '1535px' },
+      'xl': { 'min': '1280px', 'max': '1535`px' },
 
       '2xl': { 'min': '1536px' },
     },

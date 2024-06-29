@@ -4,22 +4,28 @@ import HomeScreen from "./screens/Homescreen";
 import AuthWrapper from "./screens/Authwrapper";
 import ProfileScreen from "./screens/Profilescreen";
 import SignUp from "./screens/Signup";
-import Dashboard from "./screens/Dashboard";
+import PageNotFound from "./screens/Pagenotfound";
+import Forbidden from "./screens/Forbidden";
+import MainWrapper from "./screens/Mainwrapper";
 
 const RouterFile = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomeScreen />} />
+        <Route element={<MainWrapper />}>
+          <Route path="/" element={<HomeScreen />} />
+          <Route element={<AuthWrapper />}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/sign-up" element={<SignUp />} />
+          </Route>
 
-        <Route element={<AuthWrapper />}>
-          <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/sign-up" element={<SignUp />} />
+          {/* protected routes */}
+          <Route path="profile/:uuid" element={<ProfileScreen />} />
+
+          {/* forbidden routes */}
+          <Route path="*" element={<PageNotFound />} />
+          <Route path="/forbidden" element={<Forbidden />} />
         </Route>
-
-        {/* protected routes */}
-        <Route path="/:uuid" element={<ProfileScreen />} />
       </Routes>
     </BrowserRouter>
   );
