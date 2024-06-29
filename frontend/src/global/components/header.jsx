@@ -46,10 +46,9 @@ const Header = () => {
     return <header>
         <nav className="bg-white border-gray-200 px-4 md:px-6 py-2.5">
             <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-                <a href="https://flowbite.com" className="flex items-center">
-                    <img src="https://flowbite.com/docs/images/logo.svg" className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
-                    <span className="self-center text-xl font-semibold whitespace-nowrap">Flowbite</span>
-                </a>
+                <Link to="/" className="flex items-center">
+                    <img src="https://png.pngtree.com/template/20190928/ourmid/pngtree-gold-furniture-lamp-chair-interior-logo-design-template-inspirat-image_312127.jpg" className="mr-3 h-9" alt="Flowbite Logo" />
+                </Link>
                 <div className="flex items-center  md:order-2">
                     <Link to="/login" className="text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 md:px-5 py-2 md:py-2.5 mr-2 focus:outline-none">Log in</Link>
                     <button onClick={() => setVisibility(state => !state)} data-collapse-toggle="mobile-menu-2" type="button" className="items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden inline-flex hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="mobile-menu-2" aria-expanded="false">
