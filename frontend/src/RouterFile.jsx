@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./screens/Login";
 import AuthWrapper from "./screens/Authwrapper";
+import SignUp from "./screens/Signup";
 
 const RouterFile = () => {
   return (
