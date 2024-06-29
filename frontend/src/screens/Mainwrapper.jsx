@@ -9,17 +9,19 @@ import Footer from "../global/components/footer";
 const MainWrapper = () => {
     const progress = useSelector(state => state.topLoadingBarReducer.progress);
 
-    return <div className="fixed w-[100dvw] h-[100dvh]">
-        <Alertdialog />
+    return <div className="w-[100dvw] h-[100dvh] relative">
+        <div className="fixed w-full h-full">
+            <Alertdialog />
 
-        <ToastContainer />
-        <LoadingBar
-            height={3}
-            color='#1d4ed8'
-            progress={progress}
-        />
+            <ToastContainer />
+            <LoadingBar
+                height={3}
+                color='#1d4ed8'
+                progress={progress}
+            />
+        </div>
 
-        <div className="w-full h-full flex flex-col">
+        <div className="w-full flex flex-col overflow-y-auto top-0">
             <Header />
             <Outlet />
             <Footer />
