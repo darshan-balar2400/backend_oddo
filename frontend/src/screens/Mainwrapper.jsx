@@ -10,7 +10,7 @@ const MainWrapper = () => {
     const progress = useSelector(state => state.topLoadingBarReducer.progress);
 
     return <div className="w-[100dvw] h-[100dvh] relative">
-        <div className="fixed w-full h-full">
+        <div className="fixed w-full h-full pointer-events-none">
             <Alertdialog />
 
             <ToastContainer />
