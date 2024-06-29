@@ -1,8 +1,25 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 
 const Login = () => {
+  const initialValues = { email: "", password: "" };
+
+  const validationSchema = Yup.object({
+    email: Yup.string().email("Invalid email address").required("Required"),
+    password: Yup.string()
+      .min(6, "Password must be at least 6 characters long")
+      .required("Required"),
+  });
+  const handleSubmit = (values, { setSubmitting }) => {
+    console.log("Form submitted:", values);
+    setSubmitting(false);
+  };
   return (
-    <Formik>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={handleSubmit}
+    >
       <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
         <Form className="space-y-6" action="#">
           <h5 className="text-xl font-medium text-gray-900 dark:text-white">
@@ -13,7 +30,7 @@ const Login = () => {
               htmlFor="email"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
-              Your email
+              Email Address
             </label>
             <Field
               type="email"
@@ -23,14 +40,14 @@ const Login = () => {
               placeholder="name@company.com"
               required
             />
-            <ErrorMessage name="email" component="div" />
+            <ErrorMessage name="email" />
           </div>
           <div>
             <label
               htmlFor="password"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
-              Your password
+              Password
             </label>
             <Field
               type="password"

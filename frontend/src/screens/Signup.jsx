@@ -1,31 +1,31 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 
 const Signup = () => {
+  const initialValues = { name: "", email: "", password: "", cellNumber: "" };
+
+  const validationSchema = Yup.object({
+    name: Yup.string()
+      .min(3, "Username must be at least 3 characters long")
+      .required("Required"),
+    email: Yup.string().email("Invalid email address").required("Required"),
+    password: Yup.string()
+      .min(6, "Password must be at least 6 characters long")
+      .required("Required"),
+    cellNumber: Yup.string()
+      .matches(/^[0-9]+$/, "Contact number must be digits only")
+      .length(10, "Contact number must be exactly 10 digits long")
+      .required("Contact number is required"),
+  });
+  const handleSubmit = (values, { setSubmitting }) => {
+    console.log("Form submitted:", values);
+    setSubmitting(false);
+  };
   return (
     <Formik
-      initialValues={
-        { name: "", email: "", password: "", cellNumber: "" }
-        //   validate={(values) => {
-        //     const errors = {};
-
-        //     if (!values.email) {
-        //       errors.email = "Required";
-        //     } else if (
-        //       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-        //     ) {
-        //       errors.email = "Invalid email address";
-        //     }
-        //     if (!values.password) {
-        //       errors.password = "Required";
-        //     }
-        //     return errors;
-
-        //     if (!values.cellNumber) {
-        //       errors.cellNumber = "Required";
-        //     }
-        //      errors.cellNumber="Invalid Number";
-        //   }
-      }
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={handleSubmit}
     >
       <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
         <Form className="space-y-6" action="#">
@@ -54,7 +54,7 @@ const Signup = () => {
               htmlFor="email"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
-              Your email
+              Your Email
             </label>
             <Field
               type="email"

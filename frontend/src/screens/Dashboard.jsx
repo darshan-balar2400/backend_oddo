@@ -1,7 +1,6 @@
 import { useState } from "react";
-import Carousel from "../global/components/Carousel";
 
-const Homescreen = () => {
+const Dashboard = () => {
   const [products, setProducts] = useState([
     { id: 1, name: "Sofa", price: "$500" },
     { id: 2, name: "Chair", price: "$150" },
@@ -11,7 +10,6 @@ const Homescreen = () => {
   return (
     <div>
       <h2>Products</h2>
-      <Carousel />
       <ul className="flex">
         {products.map((product) => (
           <>
@@ -66,4 +64,4 @@ const Homescreen = () => {
   );
 };
 
-export default Homescreen;
+export default Dashboard;
