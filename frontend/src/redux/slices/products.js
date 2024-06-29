@@ -19,7 +19,7 @@ const productsSlice = createSlice({
     initialState,
     reducers: {
         addProduct(state, action) {
-            state.products = {
+            return {
                 ...state.products,
                 [action.payload.uuid]: action.payload,
             };
