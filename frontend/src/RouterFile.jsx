@@ -5,7 +5,8 @@ const RouterFile = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} /> {/* 👈 Renders at /app/ */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/sign-up" element={<SignUp />} />
       </Routes>
     </BrowserRouter>
   );
