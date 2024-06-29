@@ -3,15 +3,11 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     screens: {
-      'sm': { 'min': '640px', 'max': '767px' },
-
-      'md': { 'min': '768px', 'max': '1023px' },
-
-      'lg': { 'min': '1024px', 'max': '1279px' },
-
-      'xl': { 'min': '1280px', 'max': '1535`px' },
-
-      '2xl': { 'min': '1536px' },
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
     },
     extend: {},
   },
