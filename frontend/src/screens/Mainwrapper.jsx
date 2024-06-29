@@ -4,6 +4,7 @@ import Alertdialog from "../global/components/alertdialog";
 import { useSelector } from "react-redux";
 import { ToastContainer } from "react-toastify";
 import Header from "../global/components/header";
+import Footer from "../global/components/footer";
 
 const MainWrapper = () => {
     const progress = useSelector(state => state.topLoadingBarReducer.progress);
@@ -21,6 +22,7 @@ const MainWrapper = () => {
         <div className="w-full h-full flex flex-col">
             <Header />
             <Outlet />
+            <Footer />
         </div>
     </div>;
 };
