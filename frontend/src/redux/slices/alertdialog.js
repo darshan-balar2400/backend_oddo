@@ -9,7 +9,7 @@ const initialState = {
 
 const alertDialogSlice = createSlice({
     name: 'alertdialog',
-    initialState,
+    initialState: initialState,
     reducers: {
         show(state, action) {
             return action.payload;
