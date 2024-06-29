@@ -3,19 +3,20 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import images from "../../assets/img/JPG/index";
 
 const Sliders = () => {
   const sliderRef = useRef(null);
 
   const sliderdata = [
     {
-      img: "../../assets/img/JPG/slideshow/slide1.jpg",
+      img: images.img_1,
     },
     {
-      img: "../../assets/img/JPG/slideshow/slide2.jpg",
+      img: images.img_2,
     },
     {
-      img: "../../assets/img/JPG/slideshow/slide3.jpg",
+      img: images.img3,
     },
   ];
 

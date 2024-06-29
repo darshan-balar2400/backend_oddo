@@ -8,6 +8,9 @@ import img7 from "./product/product7.jpg";
 import img8 from "./product/product8.jpg";
 import img9 from "./product/product9.jpg";
 import img10 from "./product/product10.jpg";
+import img_1 from "./slideshow/slide1.jpg";
+import img_2 from "./slideshow/slide2.jpg";
+import img_3 from "./slideshow/slide3.jpg";
 
 const images = {
   img1,
@@ -20,6 +23,9 @@ const images = {
   img8,
   img9,
   img10,
+  img_1,
+  img_2,
+  img_3,
 };
 
 export default images;
