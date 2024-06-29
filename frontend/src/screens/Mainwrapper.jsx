@@ -3,6 +3,7 @@ import LoadingBar from 'react-top-loading-bar';
 import Alertdialog from "../global/components/alertdialog";
 import { useSelector } from "react-redux";
 import { ToastContainer } from "react-toastify";
+import Header from "../global/components/header";
 
 const MainWrapper = () => {
     const progress = useSelector(state => state.topLoadingBarReducer.progress);
@@ -16,7 +17,11 @@ const MainWrapper = () => {
             color='#1d4ed8'
             progress={progress}
         />
-        <Outlet />
+
+        <div className="w-full h-full flex flex-col">
+            <Header />
+            <Outlet />
+        </div>
     </div>;
 };
 
