@@ -6,7 +6,7 @@ import Popular from "../global/components/Popular";
 
 const Homescreen = () => {
   return (
-    <div>
+    <div className="h-auto">
       <Sliders />
       <Arrival />
       <Popular />
