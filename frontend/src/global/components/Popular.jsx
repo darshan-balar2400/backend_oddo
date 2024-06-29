@@ -9,6 +9,7 @@ import "../../index.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import images from "../../assets/img/JPG/index";
+import "../../index.css";
 
 const Popular = () => {
   const products = [
@@ -101,14 +102,14 @@ const Popular = () => {
         <div className="columns-1">
           <div className="p-6">
             <Slider {...settings}>
-              {products.slice(7, 10).map((item, index) => (
+              {products.slice(1, 7).map((item, index) => (
                 <div key={index} className="mx-auto max-w-xs relative h-full">
-                  <div className="p-1 hover:bg-gray-200 hover:shadow transition-all duration-300 relative group h-full">
+                  <div className="p-1 hover:bg-gray-200 hover:shadow transition-all duration-300 relative group">
                     <img
                       src={item.img}
                       title={item.category}
                       alt={item.category}
-                      className="mx-auto h-full w-full object-cover"
+                      className="mx-auto"
                     />
                     <div className="icons absolute top-0 right-0 transform translate-x-full opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
                       <div className="flex flex-wrap flex-col  p-2 mr-1 mt-1">
@@ -150,7 +151,7 @@ const Popular = () => {
         <div className="columns-1 h-full">
           <div className="h-full">
             <img
-              src="./img/banners/id1-img1.jpg"
+              src={images.img_id1}
               title="title"
               alt="banners"
               className="bg-cover hover:shadow-slate-800"

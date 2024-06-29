@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import images from "../../assets/img/JPG/index";
+import "../../index.css";
 
 const Sliders = () => {
   const sliderRef = useRef(null);
@@ -13,10 +14,10 @@ const Sliders = () => {
       img: images.img_1,
     },
     {
-      img: images.img_2,
+      img: images.img_1,
     },
     {
-      img: images.img3,
+      img: images.img_1,
     },
   ];
 
@@ -44,7 +45,7 @@ const Sliders = () => {
       <Slider ref={sliderRef} {...settings}>
         {sliderdata.map((img, index) => (
           <div key={index}>
-            <img className="w-full" src={img.img} alt="img" />
+            <img src={img.img} alt="img" />
           </div>
         ))}
       </Slider>

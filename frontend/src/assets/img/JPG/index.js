@@ -11,6 +11,7 @@ import img10 from "./product/product10.jpg";
 import img_1 from "./slideshow/slide1.jpg";
 import img_2 from "./slideshow/slide2.jpg";
 import img_3 from "./slideshow/slide3.jpg";
+import img_id1 from "./banners/id1-img1.jpg";
 
 const images = {
   img1,
@@ -26,6 +27,7 @@ const images = {
   img_1,
   img_2,
   img_3,
+  img_id1,
 };
 
 export default images;
